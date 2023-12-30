@@ -77,6 +77,7 @@ with pkgs; [
   nixpkgs-fmt
   neovim
   erdtree
+  lazygit
 
   # Python packages
   # TODO Review python management
