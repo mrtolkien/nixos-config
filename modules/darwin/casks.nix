@@ -4,37 +4,34 @@ _:
   # Development Tools
   "homebrew/cask/docker"
   "inso"
-  # "ngrok"
-  # "postico"
   "visual-studio-code"
+  "tableplus"
 
   # Communication Tools
   "discord"
-  # "loom"
   "notion"
   "slack"
-  # "telegram"
   "zoom"
+  "beeper"
+  "signal"
 
   # Utility Tools
   "appcleaner"
   "syncthing"
+  "betterdisplay"
+  "karabiner-elements"
 
   # Entertainment Tools
   "steam"
+  "spotify"
   "vlc"
 
   # Productivity Tools
   "raycast"
+  "cron"
+  "obsidian"
 
   # Browsers
   "google-chrome"
   "firefox"
-
-  # AI
-  # TODO Add ollama
-  # "diffusionbee"
-
-  # Keyboard
-  "karabiner-elements"
 ]

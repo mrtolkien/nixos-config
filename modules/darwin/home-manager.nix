@@ -31,6 +31,7 @@ in
     #
     masApps = {
       "wireguard" = 1451685025;
+      "line" = 539883307;
     };
   };
 

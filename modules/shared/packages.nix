@@ -34,6 +34,7 @@ with pkgs; [
   # tflint
 
   # Media-related packages
+  # TODO Review
   dejavu_fonts
   ffmpeg
   fd
@@ -52,14 +53,11 @@ with pkgs; [
 
   # Text and terminal utilities
   htop
-  # hunspell
   iftop
   jetbrains-mono
   jq
   yq
   ripgrep
-  # tree
-  # tmux
   unrar
   unzip
 
@@ -82,4 +80,7 @@ with pkgs; [
   # TODO Review python management
   # python39
   # python39Packages.virtualenv # globally install virtualenv
+
+  # AI
+  ollama
 ]
