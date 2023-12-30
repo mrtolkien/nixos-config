@@ -14,6 +14,10 @@ in
     enableAutosuggestions = true;
     enableCompletion = true;
 
+    syntaxHighlighting = {
+      enable = true;
+    };
+
     initExtraFirst = ''
       if [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
         . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
@@ -28,7 +32,6 @@ in
       # Remove history data we don't want to see
       export HISTIGNORE="pwd:ls:cd"
 
-      export EDITOR="nvim"
       export VISUAL="nvim"
 
       # nix shortcuts
@@ -47,16 +50,16 @@ in
       alias la="lsd -la"
       alias lt="lsd --tree --depth"
 
-      # TODO Exa and stuff
       # fzf
       # TODO Do that
       # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+      # zsh-vi-mode
+      source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+      zvm_after_init_commands+=(eval "$(atuin init zsh)")
+
       # Zoxide = z replacement!
       eval "$(zoxide init zsh)"
-
-      # Atuin shell history
-      eval "$(atuin init zsh)"
 
       # Starship prompt
       eval "$(starship init zsh)"
@@ -64,10 +67,12 @@ in
       # TODO Local stuff that needs to be optional
       eval "$(/Users/tolki/.local/share/rtx/bin/rtx activate zsh)"
       export PATH="$PATH:/Users/tolki/Development/flutter/flutter/bin"
-      # TODO Review direnv
+
+      # TODO Review direnv usage
       # eval "$(direnv hook zsh)"
     '';
   };
+
 
   git = {
     enable = true;
@@ -88,13 +93,14 @@ in
     };
   };
 
-  # TODO Use chadnvim
+
   alacritty = {
     enable = true;
     settings = {
+      working_directory = "Development";
+
       cursor = {
         style = "Block";
-        working_directory = "Development";
       };
 
       font = {
@@ -115,12 +121,90 @@ in
           x = 10;
           y = 10;
         };
+        option_as_alt = "Both";
       };
 
       dynamic_padding = true;
-
       # TODO Add hints
-      # TODO Add keybindings
+    };
+  };
+
+  atuin = {
+    enable = true;
+
+    settings = {
+      inline_height = 20;
+      dialect = "uk";
+    };
+  };
+
+  neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+  };
+
+  starship = {
+    enable = true;
+
+    enableZshIntegration = true;
+
+    settings = {
+      format = "$os$all";
+
+      os = {
+        disabled = false;
+        symbols = {
+          Unknown = " ";
+          Macos = " ";
+          Fedora = " ";
+          NixOS = " ";
+          Debian = " ";
+          Amazon = " ";
+          Raspbian = " ";
+          Ubuntu = " ";
+        };
+      };
+
+      character = {
+        success_symbol = "➜";
+        error_symbol = "➜";
+      };
+
+      aws = {
+        style = "bold #FF9900";
+        symbol = "󰸏 ";
+
+        region_aliases = {
+          ap-northeast-1 = "東京";
+        };
+      };
+
+      python = {
+        symbol = " ";
+      };
+
+      rust = {
+        symbol = " ";
+      };
+
+      git_branch = {
+        symbol = " ";
+      };
+
+      directory = {
+        read_only = " ";
+      };
+
+      conda = {
+        symbol = " ";
+      };
+
+      package = {
+        disabled = true;
+      };
+
     };
   };
 

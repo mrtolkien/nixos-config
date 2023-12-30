@@ -75,7 +75,6 @@ with pkgs; [
   nil
   atuin
   nixpkgs-fmt
-  neovim
   erdtree
   lazygit
 
