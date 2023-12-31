@@ -18,7 +18,6 @@ _:
   # Utility Tools
   "appcleaner"
   "syncthing"
-  "betterdisplay"
   "karabiner-elements"
 
   # Entertainment Tools
@@ -34,4 +33,7 @@ _:
   # Browsers
   "google-chrome"
   "firefox"
+
+  # Old packages, keeping for reference
+  # "betterdisplay"
 ]

@@ -32,44 +32,14 @@ in
       # Remove history data we don't want to see
       export HISTIGNORE="pwd:ls:cd"
 
-      export VISUAL="nvim"
-
-      # nix shortcuts
-      shell() {
-          nix-shell '<nixpkgs>' -A "$1"
-      }
-
-      # Use difftastic, syntax-aware diffing
-      alias diff=difft
-
-      # My usual aliases
+      # Aliases
       alias dps="docker ps"
       alias f="open ."
-      alias ls="lsd"
-      alias ll="lsd -l"
-      alias la="lsd -la"
-      alias lt="lsd --tree --depth"
+      alias diff=difft
 
-      # fzf
-      # TODO Do that
-      # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-      # zsh-vi-mode
+      # zsh-vi-mode + atuin
       source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
       zvm_after_init_commands+=(eval "$(atuin init zsh)")
-
-      # Zoxide = z replacement!
-      eval "$(zoxide init zsh)"
-
-      # Starship prompt
-      eval "$(starship init zsh)"
-      
-      # TODO Local stuff that needs to be optional
-      eval "$(/Users/tolki/.local/share/rtx/bin/rtx activate zsh)"
-      export PATH="$PATH:/Users/tolki/Development/flutter/flutter/bin"
-
-      # TODO Review direnv usage
-      # eval "$(direnv hook zsh)"
     '';
   };
 
@@ -80,6 +50,9 @@ in
     userName = "mrtolkien";
     userEmail = email;
     lfs = {
+      enable = true;
+    };
+    difftastic = {
       enable = true;
     };
     extraConfig = {
@@ -125,7 +98,6 @@ in
       };
 
       dynamic_padding = true;
-      # TODO Add hints
     };
   };
 
@@ -145,9 +117,44 @@ in
     vimAlias = true;
   };
 
+  fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  lsd = {
+    enable = true;
+    enableAliases = true;
+  };
+
+
+  direnv = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  rtx = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  thefuck = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  zellij = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   starship = {
     enable = true;
-
     enableZshIntegration = true;
 
     settings = {
@@ -208,7 +215,7 @@ in
     };
   };
 
-  # TODO Add
+  # TODO Add ssh config
   # ssh = {
   #   enable = true;
 

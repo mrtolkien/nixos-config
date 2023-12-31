@@ -57,13 +57,16 @@ in
   };
 
   # Fully declarative dock using the latest from Nix Store
-  # TODO Review, causing issues
   local.dock.enable = true;
   local.dock.entries = [
-    { path = "/Applications/Slack.app/"; }
     { path = "/Applications/Firefox.app/"; }
+    { path = "/Applications/Obsidian.app/"; }
     { path = "/Applications/Cron.app/"; }
+    { path = "/Applications/Slack.app/"; }
     { path = "/Applications/Beeper.app/"; }
+    { path = "/Applications/Signal.app/"; }
+    { path = "/Applications/Visual Studio Code.app/"; }
+    { path = "/Applications/Alacritty.app/"; }
   ];
 
 }

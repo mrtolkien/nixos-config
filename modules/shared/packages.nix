@@ -1,48 +1,28 @@
 { pkgs }:
 
 with pkgs; [
-  # TODO Review
   # General packages for development and system management
-  act
-  alacritty
-  bat
-  btop
   coreutils
   killall
   neofetch
   openssh
-  # pandoc
   sqlite
   wget
   zip
+  unrar
+  unzip
 
-  # Encryption and security tools
-  age
-  age-plugin-yubikey
-  gnupg
-  libfido2
-  pinentry
-  yubikey-manager
+  # Development tools
+  nil
+  nixpkgs-fmt
+  jetbrains-mono
 
   # Cloud-related tools and SDKs
+  act
   docker
   docker-compose
-
   awscli2
-  # flyctl
-  # ngrok
-  # tflint
-
-  # Media-related packages
-  # TODO Review
-  dejavu_fonts
-  ffmpeg
-  fd
-  font-awesome
-  hack-font
-  noto-fonts
-  noto-fonts-emoji
-  meslo-lgs-nf
+  gh
 
   # Node.js development tools
   nodePackages.nodemon
@@ -52,35 +32,32 @@ with pkgs; [
   deno
 
   # Text and terminal utilities
-  htop
   iftop
-  jetbrains-mono
+  bottom
+  fd
   jq
   yq
   ripgrep
-  unrar
-  unzip
-
-  # Added by Gary
-  zellij
-  starship
-  fzf
-  fd
-  gh
+  bat
+  less
   tealdeer
-  zoxide
-  lsd
-  nil
-  atuin
-  nixpkgs-fmt
-  erdtree
   lazygit
 
-  # Python packages
-  # TODO Review python management
-  # python39
-  # python39Packages.virtualenv # globally install virtualenv
+  # File managers (still testing)
+  joshuto
+  ranger
+  yazi
+  xplr
+  nnn
 
   # AI
   ollama
+
+  # Encryption and security tools
+  age
+  # age-plugin-yubikey
+  # gnupg
+  # libfido2
+  # pinentry
+  # yubikey-manager
 ]
