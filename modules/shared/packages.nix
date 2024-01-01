@@ -31,7 +31,10 @@ with pkgs; [
   nodejs
   deno
 
+  go
+
   # Text and terminal utilities
+  alacritty-theme
   iftop
   bottom
   fd
@@ -42,6 +45,7 @@ with pkgs; [
   less
   tealdeer
   lazygit
+  chezmoi
 
   # File managers (still testing)
   joshuto

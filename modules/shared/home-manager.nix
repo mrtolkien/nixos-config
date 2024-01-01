@@ -1,5 +1,6 @@
 { config, pkgs, lib, ... }:
 
+
 let
   name = "mrtolkien";
   user = "tolki";
@@ -43,23 +44,8 @@ in
       # zsh-vi-mode + atuin
       source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
       zvm_after_init_commands+=(eval "$(atuin init zsh)")
-
-      # Your custom widget
-      function my_custom_widget() {
-        echo 'Hello, ZSH!'
-      }
-
-      # The plugin will auto execute this zvm_after_lazy_keybindings function
-      function zvm_after_lazy_keybindings() {
-        # Here we define the custom widget
-        zvm_define_widget my_custom_widget
-
-        # In normal mode, press Ctrl-E to invoke this widget
-        zvm_bindkey vicmd '^E' my_custom_widget
-      }
     '';
   };
-
 
   git = {
     enable = true;
@@ -121,10 +107,10 @@ in
   atuin = {
     enable = true;
 
-    settings = {
-      inline_height = 20;
-      dialect = "uk";
-    };
+    # settings = {
+    #   inline_height = 20;
+    #   dialect = "uk";
+    # };
   };
 
   neovim = {
@@ -155,6 +141,11 @@ in
     enableZshIntegration = true;
   };
 
+  tealdeer = {
+    enable = true;
+    settings.display.compact = true;
+  };
+
   thefuck = {
     enable = true;
     enableZshIntegration = true;
@@ -162,7 +153,9 @@ in
 
   zellij = {
     enable = true;
-    enableZshIntegration = true;
+    # Didn't play well with VSCode shell
+    # Setting up plugins was a pain with nix because I suck
+    # enableZshIntegration = true;
   };
 
   zoxide = {
@@ -174,63 +167,63 @@ in
     enable = true;
     enableZshIntegration = true;
 
-    settings = {
-      format = "$os$all";
+    # settings = {
+    #   format = "$os$all";
 
-      os = {
-        disabled = false;
-        symbols = {
-          Unknown = " ";
-          Macos = " ";
-          Fedora = " ";
-          NixOS = " ";
-          Debian = " ";
-          Amazon = " ";
-          Raspbian = " ";
-          Ubuntu = " ";
-        };
-      };
+    #   os = {
+    #     disabled = false;
+    #     symbols = {
+    #       Unknown = " ";
+    #       Macos = " ";
+    #       Fedora = " ";
+    #       NixOS = " ";
+    #       Debian = " ";
+    #       Amazon = " ";
+    #       Raspbian = " ";
+    #       Ubuntu = " ";
+    #     };
+    #   };
 
-      character = {
-        success_symbol = "[➜](bold green)";
-        error_symbol = "[➜](bold red)";
-        vimcmd_symbol = "";
-      };
+    #   character = {
+    #     success_symbol = "[➜](bold green)";
+    #     error_symbol = "[➜](bold red)";
+    #     vimcmd_symbol = "";
+    #   };
 
-      aws = {
-        style = "bold #FF9900";
-        symbol = "󰸏 ";
+    #   aws = {
+    #     style = "bold #FF9900";
+    #     symbol = "󰸏 ";
 
-        region_aliases = {
-          ap-northeast-1 = "東京";
-        };
-      };
+    #     region_aliases = {
+    #       ap-northeast-1 = "東京";
+    #     };
+    #   };
 
-      python = {
-        symbol = " ";
-      };
+    #   python = {
+    #     symbol = " ";
+    #   };
 
-      rust = {
-        symbol = " ";
-      };
+    #   rust = {
+    #     symbol = " ";
+    #   };
 
-      git_branch = {
-        symbol = " ";
-      };
+    #   git_branch = {
+    #     symbol = " ";
+    #   };
 
-      directory = {
-        read_only = " ";
-      };
+    #   directory = {
+    #     read_only = " ";
+    #   };
 
-      conda = {
-        symbol = " ";
-      };
+    #   conda = {
+    #     symbol = " ";
+    #   };
 
-      package = {
-        disabled = true;
-      };
+    #   package = {
+    #     disabled = true;
+    #   };
 
-    };
+    # };
   };
 
   # TODO Add ssh config
