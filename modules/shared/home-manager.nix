@@ -32,6 +32,9 @@ in
       # Remove history data we don't want to see
       export HISTIGNORE="pwd:ls:cd"
 
+    '';
+
+    initExtra = ''
       # Aliases
       alias dps="docker ps"
       alias f="open ."
@@ -40,6 +43,20 @@ in
       # zsh-vi-mode + atuin
       source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
       zvm_after_init_commands+=(eval "$(atuin init zsh)")
+
+      # Your custom widget
+      function my_custom_widget() {
+        echo 'Hello, ZSH!'
+      }
+
+      # The plugin will auto execute this zvm_after_lazy_keybindings function
+      function zvm_after_lazy_keybindings() {
+        # Here we define the custom widget
+        zvm_define_widget my_custom_widget
+
+        # In normal mode, press Ctrl-E to invoke this widget
+        zvm_bindkey vicmd '^E' my_custom_widget
+      }
     '';
   };
 
@@ -175,8 +192,9 @@ in
       };
 
       character = {
-        success_symbol = "➜";
-        error_symbol = "➜";
+        success_symbol = "[➜](bold green)";
+        error_symbol = "[➜](bold red)";
+        vimcmd_symbol = "";
       };
 
       aws = {
