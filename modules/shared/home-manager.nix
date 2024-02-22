@@ -29,10 +29,10 @@ in
       export PATH=$HOME/.pnpm-packages/bin:$HOME/.pnpm-packages:$PATH
       export PATH=$HOME/.npm-packages/bin:$HOME/bin:$PATH
       export PATH=$HOME/.local/share/bin:$PATH
+      export PATH=$HOME/.cargo/bin:$PATH
 
       # Remove history data we don't want to see
       export HISTIGNORE="pwd:ls:cd"
-
     '';
 
     initExtra = ''
@@ -41,9 +41,10 @@ in
       alias f="open ."
       alias diff=difft
 
-      # zsh-vi-mode + atuin
+      # zsh-vi-mode + atuin + rye
       source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
       zvm_after_init_commands+=(eval "$(atuin init zsh)")
+      source "$HOME/.rye/env"
     '';
   };
 
@@ -136,6 +137,7 @@ in
     enableZshIntegration = true;
   };
 
+  # Renamed to mise, fuck it atm, too unstable
   rtx = {
     enable = true;
     enableZshIntegration = true;

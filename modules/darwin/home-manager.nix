@@ -61,7 +61,7 @@ in
   local.dock.entries = [
     { path = "/Applications/Firefox.app/"; }
     { path = "/Applications/Obsidian.app/"; }
-    { path = "/Applications/Cron.app/"; }
+    # { path = "/Applications/Cron.app/"; }
     { path = "/Applications/Slack.app/"; }
     { path = "/Applications/Beeper.app/"; }
     { path = "/Applications/Signal.app/"; }

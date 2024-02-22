@@ -16,6 +16,8 @@ with pkgs; [
   nil
   nixpkgs-fmt
   jetbrains-mono
+  poetry
+  postgresql
 
   # Cloud-related tools and SDKs
   act
@@ -23,6 +25,7 @@ with pkgs; [
   docker-compose
   awscli2
   gh
+  git-open
 
   # Node.js development tools
   nodePackages.nodemon
@@ -32,6 +35,8 @@ with pkgs; [
   deno
 
   go
+  rustup
+  pipx
 
   # Text and terminal utilities
   alacritty-theme
@@ -46,6 +51,7 @@ with pkgs; [
   tealdeer
   lazygit
   chezmoi
+  cloc
 
   # File managers (still testing)
   joshuto
@@ -59,6 +65,7 @@ with pkgs; [
 
   # Encryption and security tools
   age
+
   # age-plugin-yubikey
   # gnupg
   # libfido2

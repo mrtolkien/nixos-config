@@ -1,6 +1,7 @@
 
 ## Layout
-```
+
+```tree
 .
 ├── dock               # MacOS dock configuration
 ├── casks.nix          # List of homebrew casks
