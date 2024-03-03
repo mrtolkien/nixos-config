@@ -10,7 +10,7 @@ in
   # Shared shell configuration
   zsh = {
     enable = true;
-    autocd = false;
+    autocd = true;
 
     enableAutosuggestions = true;
     enableCompletion = true;

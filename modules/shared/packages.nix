@@ -27,16 +27,20 @@ with pkgs; [
   gh
   git-open
 
-  # Node.js development tools
+  # Development tools
   nodePackages.nodemon
   nodePackages.prettier
   nodePackages.npm # globally install npm
   nodejs
+  bun
   deno
+  yarn
+  supabase-cli
 
   go
   rustup
   pipx
+  cmake
 
   # Text and terminal utilities
   alacritty-theme
@@ -51,7 +55,7 @@ with pkgs; [
   tealdeer
   lazygit
   chezmoi
-  cloc
+  scc
 
   # File managers (still testing)
   joshuto
