@@ -12,12 +12,6 @@ with pkgs; [
   unrar
   unzip
 
-  # Development tools
-  nil
-  nixpkgs-fmt
-  jetbrains-mono
-  poetry
-  postgresql
 
   # Cloud-related tools and SDKs
   act
@@ -28,6 +22,11 @@ with pkgs; [
   git-open
 
   # Development tools
+  nil
+  nixpkgs-fmt
+  jetbrains-mono
+  poetry
+  postgresql
   nodePackages.nodemon
   nodePackages.prettier
   nodePackages.npm # globally install npm
@@ -36,11 +35,14 @@ with pkgs; [
   deno
   yarn
   supabase-cli
+  cargo-lambda
 
   go
   rustup
+  bacon
   pipx
   cmake
+  vcpkg
 
   # Text and terminal utilities
   alacritty-theme

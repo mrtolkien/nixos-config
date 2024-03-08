@@ -33,6 +33,7 @@ in
 
       # Remove history data we don't want to see
       export HISTIGNORE="pwd:ls:cd"
+      export VCPKG_ROOT="$HOME/Development/vcpkg"
     '';
 
     initExtra = ''
