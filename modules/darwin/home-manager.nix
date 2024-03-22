@@ -22,6 +22,7 @@ in
   homebrew = {
     enable = true;
     casks = pkgs.callPackage ./casks.nix { };
+    brews = [ "llvm" ];
 
     # These app IDs are from using the mas CLI app
     # mas = mac app store

@@ -28,7 +28,7 @@ _:
   # Productivity Tools
   "raycast"
   "cron"
-  # "obsidian"
+  "obsidian"
 
   # Browsers
   "google-chrome"

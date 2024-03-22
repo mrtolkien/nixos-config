@@ -27,6 +27,7 @@ with pkgs; [
   jetbrains-mono
   poetry
   postgresql
+  sqls # sql language server
   nodePackages.nodemon
   nodePackages.prettier
   nodePackages.npm # globally install npm
@@ -38,13 +39,20 @@ with pkgs; [
   cargo-lambda
 
   go
+
   rustup
-  bacon
+  # llvm
+  # gcc
+  cmake # C++ build system
+  vcpkg # C++ package manager 
+
+  # clang
+  # mold # TODO Didn't find a way to make that work
+
   pipx
-  cmake
-  vcpkg
 
   # Text and terminal utilities
+  bacon
   alacritty-theme
   iftop
   bottom
