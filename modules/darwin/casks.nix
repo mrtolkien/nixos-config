@@ -1,24 +1,22 @@
 _:
 
 [
+  "raycast"
+
   # Development Tools
   "homebrew/cask/docker"
   "inso"
   "visual-studio-code"
-  "tableplus"
 
   # Communication Tools
   "discord"
-  "notion"
   "slack"
-  "zoom"
-  "beeper"
-  "signal"
 
-  # Utility Tools
+  # Utility 
+  "raycast"
   "appcleaner"
-  "syncthing"
   "karabiner-elements"
+  "disk-inventory-x"
 
   # Entertainment Tools
   "steam"
@@ -26,14 +24,7 @@ _:
   "vlc"
 
   # Productivity Tools
-  "raycast"
+  "notion"
   "cron"
   "obsidian"
-
-  # Browsers
-  "google-chrome"
-  "firefox"
-
-  # Old packages, keeping for reference
-  # "betterdisplay"
 ]

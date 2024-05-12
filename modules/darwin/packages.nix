@@ -8,4 +8,5 @@ shared-packages ++ [
   grandperspective
   keka
   karabiner-elements
+  appcleaner
 ]

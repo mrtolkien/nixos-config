@@ -21,7 +21,7 @@ let user = "tolki"; in
     gc = {
       user = "root";
       automatic = true;
-      interval = { Weekday = 0; Hour = 2; Minute = 0; };
+      interval = { Weekday = 0; Hour = 24; Minute = 0; };
       options = "--delete-older-than 30d";
     };
 
@@ -61,7 +61,7 @@ let user = "tolki"; in
 
       dock = {
         autohide = true;
-        # show-recents = false;
+        show-recents = true;
         showhidden = true;
         launchanim = true;
         orientation = "left";
@@ -75,9 +75,10 @@ let user = "tolki"; in
         QuitMenuItem = true;
       };
 
-      trackpad = {
-        TrackpadThreeFingerDrag = true;
-      };
+      # TODO -> Doesn't work, removes when updating 
+      # trackpad = {
+      #   TrackpadThreeFingerDrag = true;
+      # };
     };
 
     keyboard = {

@@ -12,7 +12,6 @@ with pkgs; [
   unrar
   unzip
 
-
   # Cloud-related tools and SDKs
   act
   docker
@@ -27,7 +26,6 @@ with pkgs; [
   jetbrains-mono
   poetry
   postgresql
-  sqls # sql language server
   nodePackages.nodemon
   nodePackages.prettier
   nodePackages.npm # globally install npm
@@ -37,6 +35,9 @@ with pkgs; [
   yarn
   supabase-cli
   cargo-lambda
+  pre-commit
+  pulumi-bin
+  dbmate
 
   go
 

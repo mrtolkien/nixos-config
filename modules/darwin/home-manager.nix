@@ -22,7 +22,13 @@ in
   homebrew = {
     enable = true;
     casks = pkgs.callPackage ./casks.nix { };
-    brews = [ "llvm" ];
+    # brews = [
+    #   "llvm"
+    #   # {
+    #   #   name = "rconroy293/seventeenlands/seventeenlands";
+    #   #   restart_service = true;
+    #   # }
+    # ];
 
     # These app IDs are from using the mas CLI app
     # mas = mac app store
@@ -66,7 +72,7 @@ in
     { path = "/Applications/Obsidian.app/"; }
     # { path = "/Applications/Cron.app/"; }
     { path = "/Applications/Slack.app/"; }
-    { path = "/Applications/Beeper.app/"; }
+    # { path = "/Applications/Beeper.app/"; }
     { path = "/Applications/Signal.app/"; }
     { path = "/Applications/Visual Studio Code.app/"; }
     { path = "/Applications/Alacritty.app/"; }
