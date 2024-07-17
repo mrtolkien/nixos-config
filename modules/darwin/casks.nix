@@ -4,17 +4,21 @@ _:
   "raycast"
 
   # Development Tools
-  "homebrew/cask/docker"
+  # "homebrew/cask/docker"
   "inso"
   "visual-studio-code"
+  "kicad"
 
   # Communication Tools
   "discord"
   "slack"
+  "messenger"
 
   # Utility 
   "raycast"
   "appcleaner"
+
+  # TODO Those are also in packages.nix?
   "karabiner-elements"
   "disk-inventory-x"
 
@@ -25,6 +29,6 @@ _:
 
   # Productivity Tools
   "notion"
-  "cron"
+  "notion-calendar"
   "obsidian"
 ]

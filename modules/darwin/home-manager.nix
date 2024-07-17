@@ -19,29 +19,31 @@ in
     shell = pkgs.zsh;
   };
 
-  homebrew = {
-    enable = true;
-    casks = pkgs.callPackage ./casks.nix { };
-    # brews = [
-    #   "llvm"
-    #   # {
-    #   #   name = "rconroy293/seventeenlands/seventeenlands";
-    #   #   restart_service = true;
-    #   # }
-    # ];
+  # homebrew = {
+  #   enable = true;
+  #   casks = pkgs.callPackage ./casks.nix { };
+  # taps = [ "pulumi/tap" ];
+  # brews = [
+  #   "pulumi"
+  # ];
+  # {
+  #   name = "rconroy293/seventeenlands/seventeenlands";
+  #   restart_service = true;
+  # }
+  # ];
 
-    # These app IDs are from using the mas CLI app
-    # mas = mac app store
-    # https://github.com/mas-cli/mas
-    #
-    # $ nix shell nixpkgs#mas
-    # $ mas search <app name>
-    #
-    masApps = {
-      "wireguard" = 1451685025;
-      "line" = 539883307;
-    };
-  };
+  # These app IDs are from using the mas CLI app
+  # mas = mac app store
+  # https://github.com/mas-cli/mas
+  #
+  # $ nix shell nixpkgs#mas
+  # $ mas search <app name>
+  #
+  #   masApps = {
+  #     "wireguard" = 1451685025;
+  #     "line" = 539883307;
+  #   };
+  # };
 
   # Enable home-manager
   home-manager = {
@@ -75,7 +77,7 @@ in
     # { path = "/Applications/Beeper.app/"; }
     { path = "/Applications/Signal.app/"; }
     { path = "/Applications/Visual Studio Code.app/"; }
-    { path = "/Applications/Alacritty.app/"; }
+    # { path = "/Applications/Alacritty.app/"; }
   ];
 
 }

@@ -13,7 +13,7 @@ with pkgs; [
   unzip
 
   # Cloud-related tools and SDKs
-  act
+  # act
   docker
   docker-compose
   awscli2
@@ -21,41 +21,40 @@ with pkgs; [
   git-open
 
   # Development tools
+  pipx
   nil
   nixpkgs-fmt
   jetbrains-mono
   poetry
   postgresql
+  supabase-cli
+  cargo-lambda
+  pre-commit
+  dbmate
+  # tuna
+  go
+  rustup
+  # llvm
+  # gcc
+  # clang
+  # mold # TODO Didn't find a way to make that work
+  cmake # C++ build system
+  # vcpkg # C++ package manager 
+
+  # Javascript and Typescript
   nodePackages.nodemon
-  nodePackages.prettier
+  # nodePackages.prettier
   nodePackages.npm # globally install npm
+  nodePackages.pnpm # globally install npm
   nodejs
   bun
   deno
   yarn
-  supabase-cli
-  cargo-lambda
-  pre-commit
-  pulumi-bin
-  dbmate
-
-  go
-
-  rustup
-  # llvm
-  # gcc
-  cmake # C++ build system
-  vcpkg # C++ package manager 
-
-  # clang
-  # mold # TODO Didn't find a way to make that work
-
-  pipx
 
   # Text and terminal utilities
   bacon
   alacritty-theme
-  iftop
+  # iftop
   bottom
   fd
   jq
@@ -67,13 +66,19 @@ with pkgs; [
   lazygit
   chezmoi
   scc
+  # hugo
+
+  # texliveMedium
+  # texlivePackages.moderncv
+  # texliveMedium.withPackages
+  # (ps: [ ps.moderncv ])
 
   # File managers (still testing)
-  joshuto
-  ranger
+  # joshuto
+  # ranger
   yazi
-  xplr
-  nnn
+  # xplr
+  # nnn
 
   # AI
   ollama

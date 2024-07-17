@@ -12,7 +12,7 @@ in
     enable = true;
     autocd = true;
 
-    enableAutosuggestions = true;
+    autosuggestion = { enable = true; };
     enableCompletion = true;
 
     syntaxHighlighting = {
@@ -31,6 +31,7 @@ in
       export PATH=$HOME/.local/share/bin:$PATH
       export PATH=$HOME/.local/bin:$PATH
       export PATH=$HOME/.cargo/bin:$PATH
+      export PATH=/opt/homebrew/bin/:$PATH
 
       # Remove history data we don't want to see
       export HISTIGNORE="pwd:ls:cd"
@@ -94,7 +95,7 @@ in
       };
 
       window = {
-        decorations = "buttonless";
+        decorations = "Buttonless";
         opacity = 1.0;
         padding = {
           x = 10;
@@ -103,7 +104,8 @@ in
         option_as_alt = "Both";
       };
 
-      dynamic_padding = true;
+      # TODO Not working anymore
+      # dynamic_padding = true;
     };
   };
 
@@ -150,10 +152,10 @@ in
     settings.display.compact = true;
   };
 
-  thefuck = {
-    enable = true;
-    enableZshIntegration = true;
-  };
+  # thefuck = {
+  #   enable = true;
+  #   enableZshIntegration = true;
+  # };
 
   zellij = {
     enable = true;

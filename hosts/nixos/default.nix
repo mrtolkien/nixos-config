@@ -41,7 +41,7 @@ in
   nix = {
     nixPath = [ "nixos-config=/home/${user}/.local/share/src/nixos-config:/etc/nixos" ];
     settings.allowed-users = [ "${user}" ];
-    package = pkgs.nixUnstable;
+    package = pkgs.nixVersions.latest;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
@@ -91,7 +91,7 @@ in
 
       # Turn Caps Lock into Ctrl
       layout = "us";
-      xkbOptions = "ctrl:nocaps";
+      # xkbOptions = "ctrl:nocaps";
 
       # Better support for general peripherals
       libinput.enable = true;

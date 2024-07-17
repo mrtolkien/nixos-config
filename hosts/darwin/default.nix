@@ -15,13 +15,13 @@ let user = "tolki"; in
 
   # Setup user, packages, programs
   nix = {
-    package = pkgs.nixUnstable;
+    package = pkgs.nixVersions.latest;
     settings.trusted-users = [ "@admin" "${user}" ];
 
     gc = {
       user = "root";
       automatic = true;
-      interval = { Weekday = 0; Hour = 24; Minute = 0; };
+      interval = { Weekday = 0; Hour = 23; Minute = 0; };
       options = "--delete-older-than 30d";
     };
 
@@ -40,8 +40,7 @@ let user = "tolki"; in
   environment.pathsToLink = [ "/share/zsh" ];
 
   # Enable fonts dir
-  fonts.fontDir.enable = true;
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" "FiraCode" "DroidSansMono" ]; })
   ];
 
@@ -75,15 +74,14 @@ let user = "tolki"; in
         QuitMenuItem = true;
       };
 
-      # TODO -> Doesn't work, removes when updating 
-      # trackpad = {
-      #   TrackpadThreeFingerDrag = true;
-      # };
+      trackpad = {
+        TrackpadThreeFingerDrag = false;
+      };
     };
 
     keyboard = {
       enableKeyMapping = true;
-      remapCapsLockToControl = true;
+      # remapCapsLockToControl = true;
     };
   };
 }
