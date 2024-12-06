@@ -37,7 +37,7 @@ shared-packages ++ [
   rofi
   rofi-calc
   rnix-lsp # lsp-mode for nix
-  postgresql
+  postgresql_16
 
   # Screenshot and recording tools
   flameshot

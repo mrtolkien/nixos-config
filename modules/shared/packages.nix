@@ -11,6 +11,7 @@ with pkgs; [
   zip
   unrar
   unzip
+  helix
 
   # Cloud-related tools and SDKs
   # act
@@ -21,13 +22,12 @@ with pkgs; [
   git-open
 
   # Development tools
-  pipx
   nil
   nixpkgs-fmt
   jetbrains-mono
   poetry
   postgresql
-  supabase-cli
+  # supabase-cli
   cargo-lambda
   pre-commit
   dbmate
@@ -39,6 +39,7 @@ with pkgs; [
   # clang
   # mold # TODO Didn't find a way to make that work
   cmake # C++ build system
+  pandoc
   # vcpkg # C++ package manager 
 
   # Javascript and Typescript
@@ -66,19 +67,13 @@ with pkgs; [
   lazygit
   chezmoi
   scc
-  # hugo
+  hugo
 
   # texliveMedium
   # texlivePackages.moderncv
   # texliveMedium.withPackages
   # (ps: [ ps.moderncv ])
-
-  # File managers (still testing)
-  # joshuto
-  # ranger
   yazi
-  # xplr
-  # nnn
 
   # AI
   ollama

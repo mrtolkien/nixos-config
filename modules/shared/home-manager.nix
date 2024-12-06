@@ -30,8 +30,9 @@ in
       export PATH=$HOME/.npm-packages/bin:$HOME/bin:$PATH
       export PATH=$HOME/.local/share/bin:$PATH
       export PATH=$HOME/.local/bin:$PATH
-      export PATH=$HOME/.cargo/bin:$PATH
+      # export PATH=$HOME/.cargo/bin:$PATH
       export PATH=/opt/homebrew/bin/:$PATH
+      export PATH="$HOME/.bun:$PATH"
 
       # Remove history data we don't want to see
       export HISTIGNORE="pwd:ls:cd"
@@ -41,13 +42,16 @@ in
     initExtra = ''
       # Aliases
       alias dps="docker ps"
-      alias f="open ."
       alias diff=difft
+      alias f="marta ."
+      alias v="y '/Users/tolki/Library/Mobile Documents/iCloud~md~obsidian/Documents/Vaulki'"
+      alias l=lazygit
 
       # zsh-vi-mode + atuin + rye
       source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
       zvm_after_init_commands+=(eval "$(atuin init zsh)")
       source "$HOME/.rye/env"
+      source "$HOME/.cargo/env"
     '';
   };
 
@@ -74,48 +78,8 @@ in
   };
 
 
-  alacritty = {
-    enable = true;
-    settings = {
-      working_directory = "Development";
-
-      cursor = {
-        style = "Block";
-      };
-
-      font = {
-        normal = {
-          family = "JetBrainsMono Nerd Font";
-          style = "Regular";
-        };
-        size = lib.mkMerge [
-          (lib.mkIf pkgs.stdenv.hostPlatform.isLinux 10)
-          (lib.mkIf pkgs.stdenv.hostPlatform.isDarwin 14)
-        ];
-      };
-
-      window = {
-        decorations = "Buttonless";
-        opacity = 1.0;
-        padding = {
-          x = 10;
-          y = 10;
-        };
-        option_as_alt = "Both";
-      };
-
-      # TODO Not working anymore
-      # dynamic_padding = true;
-    };
-  };
-
   atuin = {
     enable = true;
-
-    # settings = {
-    #   inline_height = 20;
-    #   dialect = "uk";
-    # };
   };
 
   neovim = {
@@ -135,17 +99,10 @@ in
     enableAliases = true;
   };
 
-
   direnv = {
     enable = true;
     enableZshIntegration = true;
   };
-
-  # Renamed to mise, fuck it atm, too unstable
-  # rtx = {
-  #   enable = true;
-  #   enableZshIntegration = true;
-  # };
 
   tealdeer = {
     enable = true;
@@ -159,9 +116,6 @@ in
 
   zellij = {
     enable = true;
-    # Didn't play well with VSCode shell
-    # Setting up plugins was a pain with nix because I suck
-    # enableZshIntegration = true;
   };
 
   zoxide = {
@@ -172,85 +126,27 @@ in
   starship = {
     enable = true;
     enableZshIntegration = true;
-
-    # settings = {
-    #   format = "$os$all";
-
-    #   os = {
-    #     disabled = false;
-    #     symbols = {
-    #       Unknown = " ";
-    #       Macos = " ";
-    #       Fedora = " ";
-    #       NixOS = " ";
-    #       Debian = " ";
-    #       Amazon = " ";
-    #       Raspbian = " ";
-    #       Ubuntu = " ";
-    #     };
-    #   };
-
-    #   character = {
-    #     success_symbol = "[➜](bold green)";
-    #     error_symbol = "[➜](bold red)";
-    #     vimcmd_symbol = "";
-    #   };
-
-    #   aws = {
-    #     style = "bold #FF9900";
-    #     symbol = "󰸏 ";
-
-    #     region_aliases = {
-    #       ap-northeast-1 = "東京";
-    #     };
-    #   };
-
-    #   python = {
-    #     symbol = " ";
-    #   };
-
-    #   rust = {
-    #     symbol = " ";
-    #   };
-
-    #   git_branch = {
-    #     symbol = " ";
-    #   };
-
-    #   directory = {
-    #     read_only = " ";
-    #   };
-
-    #   conda = {
-    #     symbol = " ";
-    #   };
-
-    #   package = {
-    #     disabled = true;
-    #   };
-
-    # };
   };
 
-  # TODO Add ssh config
-  # ssh = {
-  #   enable = true;
+  yazi = {
+    enable = true;
+    enableZshIntegration = true;
+    shellWrapperName = "y";
 
-  #   extraConfig = lib.mkMerge [
-  #     ''
-  #       Host github.com
-  #         Hostname github.com
-  #         IdentitiesOnly yes
-  #     ''
-  #     (lib.mkIf pkgs.stdenv.hostPlatform.isLinux
-  #       ''
-  #         IdentityFile /home/${user}/.ssh/id_github
-  #       '')
-  #     (lib.mkIf pkgs.stdenv.hostPlatform.isDarwin
-  #       ''
-  #         IdentityFile /Users/${user}/.ssh/id_github
-  #       '')
-  #   ];
-  # };
+    settings = {
+      manager = {
+        show_hidden = true;
+      };
+      preview = {
+        max_width = 1000;
+        max_height = 1000;
+      };
+    };
+
+    # initLua = ''
+    #   			require("full-border"):setup()
+    #   			require("starship"):setup()
+    #   		'';
+  };
 
 }

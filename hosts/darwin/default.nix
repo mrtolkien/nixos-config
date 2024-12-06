@@ -41,7 +41,9 @@ let user = "tolki"; in
 
   # Enable fonts dir
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" "FiraCode" "DroidSansMono" ]; })
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.fira-code
+    nerd-fonts.droid-sans-mono
   ];
 
   system = {
